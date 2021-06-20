@@ -1,0 +1,31 @@
+# VRML_SIM R2021a utf8
+# license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
+# license url: https://cyberbotics.com/webots_assets_license
+# Piso2 do campo
+
+PROTO Piso2 [
+        field SFVec3f    translation       0 0.0005 -1.2
+	      field SFRotation rotation        0 2 0 0
+]
+{
+Solid{
+  translation IS translation
+		rotation IS rotation
+  children [
+    Shape{
+      appearance PBRAppearance {
+						baseColor 1 1 0
+						roughness 1
+						metalness 0
+					}
+     geometry DEF Piso2_size Plane{
+						size 0.5 0.5
+					}
+    }
+  ]
+      name "Piso2"
+			boundingObject USE Piso2_size
+			locked TRUE
+}
+}
+
