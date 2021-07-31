@@ -1,0 +1,27 @@
+package Definicores;
+
+import java.util.Arrays;
+
+public class InterSEK {
+
+ public static double[] Cor(Colors corA, Colors corB){
+
+		double max = 0;
+		int index = 0;
+		double diferenca;
+
+		for (int i = 0; i < 3; i++){
+			diferenca = Math.abs(corA.getValor()[i] - corB.getValor()[i]);
+			if (diferenca > max) {
+				max = diferenca;
+				index = i;
+			}
+		}
+
+		double media = (corA.getValor()[index] + corB.getValor()[index])/2.0f;
+
+		// e feita uma conversao implicita de int para double no valor da variavel index
+		return new double[] {media, index}; 
+
+  }
+}
